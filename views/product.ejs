@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+     <script src="https://kit.fontawesome.com/9924bb21e3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/product.css">
+</head>
+
+<body>
+
+    
+    
+  
+       <div class="main">
+      <div class="img">
+            <img src="<%=product.image%>" alt="">
+        </div>
+       <div class="contents">
+         <div class="description">
+            <h2><%=product.title%></h2>
+            <h1><%=product.brand%></h1>
+             <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <h2>Rs.<%=product.price%></h2>
+            </div>
+
+            <div class="offers">
+                <i class="fa-solid fa-bell" id="bell"></i>
+                <h4 class="bell-text">offers</h4>
+                <div class="offer-main">
+                    <div class="offer-div-1">
+                      <h4>  Cashback</h4>
+                        Upto 100 ruppees cashback when...
+
+                    </div>
+                    <div class="offer-div-2">
+                       <h4> Bank Offer</h4>
+                    Upto ₹1,250 discount on...
+                    </div>
+
+                    <div class="offer-div-3">
+                       <h4> Partner Offers</h4>
+                      Get GST invoice and save up...
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    
+       <div class="cart-button">
+         <a href="/order/<%= product._id %>"><button id="buy">Buy Now</button></a>
+         <a href="/add-to-cart/<%= product._id %>" ><button id="add">Add to cart</button></a>
+       </div>
+       </div>
+   </div>
+   
+  
+    
+</body>
+
+</html>

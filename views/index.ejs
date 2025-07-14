@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>house of makka</title>
+  <script src="https://kit.fontawesome.com/9924bb21e3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+  <section id="header">
+    <a href="#"><img src="./assets/logo/logo2.png" alt="!!" class="logo"></a>
+
+    <div>
+      <ul id="navbar">
+  <li><a class="active" href="/home">Home</a></li>
+  <% if (showAuthLinks) { %>
+    <li><a href="/signup">Signup</a></li>
+    <li><a href="/login">Login</a></li>
+  <% } %>
+  <% if(showAuthLinks2){ %>
+    <%- navbaritem2 %>
+  <% } %>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>
+   <li><a href="/chatbot">Chatbot</a></li>
+
+  <% if(showAuthLinks2){ %>
+    <% if(role == 'admin'){ %>
+      <%- navbaritem3 %>
+    <% } else { %>
+      <%- navbaritem1 %>
+    <% } %>
+  <% } %>
+
+  <!-- ✅ New Chatbot Link -->
+  <!-- <li><a href="/chatbot">Chatbot</a></li> -->
+</ul>
+    
+    </div>
+  </section>
+
+  <section id="hero">
+    <div id="hero-div">
+      <h4>Trade-in-offer</h4>
+      <h2>Super value deals</h2>
+      <h1>On all products</h1>
+      <p>Save more with coupons & up to 70% off!</p>
+      <a href="/shop"><button>Shop Now</button></a>
+
+    </div>
+  </section>
+
+  <section id="feature" class="section-p1">
+    <div class="fe-box">
+      <img src="./assets/shopnow/frreshiping.png" alt="">
+      <h6>Free Shipping</h6>
+    </div>
+
+    <div class="fe-box">
+      <img src="./assets/shopnow/onlineorder.png" alt="">
+      <h6>Online Order</h6>
+    </div>
+
+    <div class="fe-box">
+      <img src="./assets/shopnow/savemoney.jpg" alt="">
+      <h6>Save Money</h6>
+    </div>
+
+    <div class="fe-box">
+      <img src="./assets/shopnow/promotions.jpeg" alt="">
+      <h6>Promotions</h6>
+    </div>
+
+    <div class="fe-box">
+      <img src="./assets/shopnow/happysale.webp" alt="">
+      <h6>Happy Sale</h6>
+    </div>
+
+    <div class="fe-box">
+      <img src="./assets/shopnow/support.jpeg" alt="">
+      <h6>Support</h6>
+    </div>
+
+  </section>
+
+  <section id="product1" class="section-p1">
+    <h2>T-Shirt Collections</h2>
+    <p>Summer Collection New Modern Design</p>
+
+    <div class="pro-container">
+
+      <% products.forEach((product)=> { %>
+        <a href="/product/<%=product._id%>" style="text-decoration: none; color: inherit;">
+          <div class="pro">
+            <img src="<%=product.image%>" alt="<%=product.title%>">
+            <div class="des">
+              <span>
+                <%=product.brand%>
+              </span>
+              <h5>
+                <%=product.title%>
+              </h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <h4> Rs.<%=product.price%>
+                </h4>
+              </div>
+              <a id="cart" href="/add-to-cart/<%= product._id %>"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+          </div>
+        </a>
+        <% }); %>
+    </div>
+  </section>
+
+
+
+  <section id="banner" class="section-m1">
+    <h4>Repair Services</h4>
+    <h2>Up to <span>70% Off</span> -All t-Shirts & Accessories</h2>
+    <button class="normal">Explore More</button>
+  </section>
+
+  <section id="product1" class="section-p1">
+    <h2>Shirt Collections</h2>
+    <p>Summer Collection New Modern Design</p>
+    <div class="pro-container">
+
+      <% shirts.forEach((shirt)=> { %>
+        <a href="/shirt/<%=shirt._id%>" style="text-decoration: none; color: inherit;">
+          <div class="pro">
+            <img src="<%=shirt.image%>" alt="<%=shirt.title%>">
+            <div class="des">
+              <span>
+                <%=shirt.brand%>
+              </span>
+              <h5>
+                <%=shirt.title%>
+              </h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <h4> Rs.<%=shirt.price%>
+                </h4>
+              </div>
+              <a id="cart" href="/add-to-cart/<%= shirt._id %>"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+          </div>
+        </a>
+        <% }); %>
+    </div>
+  </section>
+
+
+  <section id="sm-banner" class="section-p1">
+    <div class="banner-box">
+      <h4>Crazy deals</h4>
+      <h2>buy 1 get 1 free</h2>
+      <span>The best classic dress is on sale at house of makka</span>
+      <button class="white">Learn More</button>
+    </div>
+
+    <div class="banner-box banner-box2">
+      <h4>spring/summer</h4>
+      <h2>upcoming seasons</h2>
+      <span>The best classic dress is on sale at house of makka</span>
+      <button class="white">Collection</button>
+    </div>
+  </section>
+
+  <section id="banner3">
+    <div class="banner-box">
+      <h2>SEASONAL SALE</h2>
+      <H3>Winter Collection -50% OFF</H3>
+    </div>
+
+    <div class="banner-box banner-box2">
+      <h2>NEW FOOTWEAR COLLECTIONS</h2>
+      <H3>Spring/Summer 2025</H3>
+    </div>
+
+    <div class="banner-box banner-box3">
+      <h2>T-SHIRTS</h2>
+      <H3>New Treandy Prints</H3>
+    </div>
+
+  </section>
+
+  <section id="newsletter" class="section-p1 section-m1">
+
+    <div class="newstext">
+      <h4>Sign Up For Newsletters</h4>
+      <p>Get E-mail updates about our latest shop and <span>special offers</span></p>
+    </div>
+
+    <div class="form1">
+      <form action="/news" method="post" class="form">
+        <input type="email" name="email" placeholder="Your email address">
+        <button class="normal" type="submit">Sign Up</button>
+      </form>
+
+
+
+    </div>
+
+  </section>
+
+  <footer class="section-p1">
+
+    <div class="col">
+      <img src="./assets/logo/logo1.png" alt="">
+      <h4>Contact</h4>
+      <p><strong>Address:</strong> 1/771, The Shop, 772, Napier Street, Fort, Fort-682001</p>
+      <p><strong>Phone:</strong>+91 8606796160</p>
+      <p><strong>Hours</strong>10:00am - 8:00pm, Mon - Sat</p>
+
+      <div class="follow">
+        <h4>Follow us</h4>
+        <div class="icon">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">About us</a>
+      <a href="#">Delivery Information</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Contact Us</a>
+    </div>
+
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">My Account</a>
+      <a href="#">Sign In</a>
+      <a href="#">View Cart</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="#">Help</a>
+    </div>
+
+    <div class="col install">
+      <h4>Install App</h4>
+      <p>From App Store or Google Play</p>
+      <div class="row">
+        <img id="appstore" src="./assets/footer/appstore.jpg" alt="">
+        <img src="./assets/footer/playstore.png" alt="">
+      </div>
+      <p>Secured Payment Gateways</p>
+      <!-- <img src="./assets/footer/payments2.png" alt=""> -->
+      <img id="pay" src="./assets/footer/payment6.png" alt="">
+    </div>
+
+    <div class="copyright">
+      <p>2025, Tech etc - House Of Makka Official Website</p>
+    </div>
+
+  </footer>
+
+
+
+  <script src="script.js"></script>
+  <script>
+  // Reload page from server on back/forward navigation (to enforce logout state)
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
+      window.location.reload();
+    }
+  });
+</script>
+</body>
+
+</html>

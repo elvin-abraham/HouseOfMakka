@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../order.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="payment-details">
+            <h2>Shipment Details</h2>
+               <form action="/post-order/<%= productid %>" method="post">
+    <input type="text" name="user" placeholder="Enter the name">
+    <input type="text" name="address" placeholder="Enter the address">
+    <input type="number" name="pincode" placeholder="Enter the pincode">
+    <input type="text" name="productdetails" value="<%= title %>">
+
+    
+    <h2>Payment Details</h2>
+    <input type="text" name="cardname" placeholder="Enter card holder name">
+    <input type="number" name="cardaddress" placeholder="Enter CVV number">
+
+    <label for="expiry-month">Expiry Date:</label>
+    <select name="expirymonth" id="expiry-month" required>
+        <option value="" disabled selected>MM</option>
+        <% for (let i = 1; i <= 12; i++) { %>
+            <option value="<%= i.toString().padStart(2, '0') %>">
+                <%= i.toString().padStart(2, '0') %>
+            </option>
+        <% } %>
+    </select>
+
+    <select name="expiryyear" id="expiry-year" required>
+        <option value="" disabled selected>YYYY</option>
+        <% const currentYear = new Date().getFullYear(); 
+           for (let y = currentYear; y <= currentYear + 15; y++) { %>
+            <option value="<%= y %>">
+                <%= y %>
+            </option>
+        <% } %>
+    </select>
+
+    <button type="submit" class="makepayment">Make Payment</button>
+</form>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

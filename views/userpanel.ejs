@@ -1,0 +1,114 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Panel</title>
+  <link rel="stylesheet" href="../userpanel.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, <%= user.name %></h1>
+    <p>Email: <%= user.email %></p>
+
+    <!-- <div class="panel-sections">
+      <div class="section cart">
+        <h2>Your Cart</h2>
+        <% if (user.cart && user.cart.length > 0) { %>
+          <ul>
+            <% user.cart.forEach(function(item, index) { %>
+              <li>
+                <strong>Item <%= index + 1 %>:</strong><br>
+                Product ID: <%= item.productId %><br>
+                Quantity: <%= item.quantity %>
+              </li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <p>Your cart is empty.</p>
+        <% } %>
+      </div>
+
+      <div class="section orders">
+        <h2>Your Orders</h2>
+        <% if (orders && orders.length > 0) { %>
+          <ul>
+            <% orders.forEach(function(order, index) { %>
+              <li>
+                <strong>Order <%= index + 1 %>:</strong><br>
+                Title: <%= order.title %><br>
+                Product ID: <%= order.productId %><br>
+                Address: <%= order.userAddress %><br>
+                Pincode: <%= order.userPincode %><br>
+                Ordered by: <%= order.userName %><br>
+                Payment via: <%= order.cardName %> (Exp: <%= order.expiryMonth %>/<%= order.expiryYear %>)<br>
+              </li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <p>You have no orders yet.</p>
+        <% } %>
+      </div>
+    </div> -->
+
+    <div class="panel-sections">
+
+  <!-- Cart Section -->
+  <div class="section cart">
+    <h2>Your Cart</h2>
+    <% if (user.cart && user.cart.length > 0) { %>
+      <form action="/remove-cart" method="POST">
+        <ul>
+          <% user.cart.forEach(function(item, index) { %>
+            <li>
+              <input type="checkbox" name="cartItems" value="<%= item.productId %>">
+              <strong>Item <%= index + 1 %>:</strong><br>
+              Product ID: <%= item.productId %><br>
+              Quantity: <%= item.quantity %>
+            </li>
+          <% }) %>
+        </ul>
+        <button type="submit" class="remove-btn">Remove from Cart</button>
+      </form>
+    <% } else { %>
+      <p>Your cart is empty.</p>
+    <% } %>
+  </div>
+
+  <!-- Orders Section -->
+  <div class="section orders">
+    <h2>Your Orders</h2>
+    <% if (orders && orders.length > 0) { %>
+      <form action="/remove-order" method="POST">
+        <ul>
+          <% orders.forEach(function(order, index) { %>
+            <li>
+              <input type="checkbox" name="orderItems" value="<%= order._id %>">
+              <strong>Order <%= index + 1 %>:</strong><br>
+              Title: <%= order.title %><br>
+              Product ID: <%= order.productId %><br>
+              Address: <%= order.userAddress %><br>
+              Pincode: <%= order.userPincode %><br>
+              Ordered by: <%= order.userName %><br>
+              Payment via: <%= order.cardName %> (Exp: <%= order.expiryMonth %>/<%= order.expiryYear %>)<br>
+            </li>
+          <% }) %>
+        </ul>
+        <button type="submit" class="remove-btn">Remove Order</button>
+      </form>
+    <% } else { %>
+      <p>You have no orders yet.</p>
+    <% } %>
+  </div>
+
+</div>
+
+    <form action="/logout" method="post" class="logout-form">
+      <button type="submit">Logout</button>
+    </form>
+  </div>
+</body>
+</html>
+
+

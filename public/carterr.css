@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box
+}
+
+body{
+    background-color: azure;
+}
+
+.main{
+    text-align: center;
+    margin-top: 200px;
+}
+
+.main .anchor{
+    margin-top: 20px;
+    text-decoration: none;
+    color: tomato;
+}
+
+.main .anchor a{
+    color: tomato;
+    text-decoration: none;
+}

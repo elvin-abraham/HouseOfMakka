@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: grey;
+}
+
+.main{
+    display: flex;
+}
+
+.img{
+    display: inline;
+}
+
+.img img{
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 60px;
+   
+}
+
+.description h1{
+    margin-top: 10px;
+}
+
+.contents{
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+.cart-button{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.cart-button #buy{
+    margin-left: 30px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: brown;
+    color: white;
+}
+
+.cart-button #add{
+    margin-right: 30px;
+     width: 150px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: brown;
+    color: white;
+}
+
+.star{
+    margin-top: 10px;
+}
+
+.star h2{
+    margin-top: 10px;
+}
+
+.star i{
+    color: yellow;
+}
+.offers{
+    margin-top: 30px;
+}
+
+.offer-main{
+    margin-top: 10px;
+    
+    
+}
+
+#bell{
+    display: inline;
+    color: red;
+}
+
+.bell-text{
+    display: inline;
+    color: red;
+}
+
+.offer-main{
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+
+.offer-div-1{
+    width: 100px;
+    height: 100px;
+    border: 0.5px solid black;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.offer-div-2{
+    width: 100px;
+    height: 100px;
+    border: 0.5px solid black;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.offer-div-3{
+    width: 100px;
+    height: 100px;
+    border: 0.5px solid black;
+    text-align: center;
+    border-radius: 20px;
+}
+
+ 

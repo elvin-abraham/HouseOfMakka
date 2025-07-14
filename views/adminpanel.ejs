@@ -1,0 +1,67 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="../adminpanel.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Dashboard</h1>
+
+    <div class="section">
+      <h2>Users & Their Carts</h2>
+      <% users.forEach(user => { %>
+        <div class="user-block">
+          <h3><%= user.name %> (<%= user.email %>)</h3>
+          <ul>
+            <% user.cart.forEach(item => { %>
+              <li>
+                <strong>Product:</strong> <%= item.productId?.title || "N/A" %><br>
+                <strong>Quantity:</strong> <%= item.quantity %>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
+      <% }) %>
+    </div>
+
+    <div class="section">
+      <h2>All Orders</h2>
+      <% orders.forEach(order => { %>
+        <div class="order-block">
+          <strong>User:</strong> <%= order.userId?.name || "Unknown" %> (<%= order.userId?.email || "N/A" %>)<br>
+          <strong>Title:</strong> <%= order.title %><br>
+          <strong>Address:</strong> <%= order.userAddress %><br>
+          <strong>Pincode:</strong> <%= order.userPincode %><br>
+          <strong>Card:</strong> <%= order.cardName %> (Exp: <%= order.expiryMonth %>/<%= order.expiryYear %>)
+        </div>
+      <% }) %>
+    </div>
+
+    <div class="section">
+      <h2>All Products</h2>
+      <ul>
+        <% products.forEach(p => { %>
+          <li><%= p.title %> - <%= p.brand %> - ₹<%= p.price %></li>
+        <% }) %>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>All Shirts</h2>
+      <ul>
+        <% shirts.forEach(s => { %>
+          <li><%= s.title %> - <%= s.brand %> - ₹<%= s.price %></li>
+        <% }) %>
+      </ul>
+    </div>
+
+    <form action="/logout" method="post" class="logout-form">
+      <button type="submit">Logout</button>
+    </form>
+  </div>
+</body>
+</html>
