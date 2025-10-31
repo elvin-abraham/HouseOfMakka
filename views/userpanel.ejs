@@ -12,45 +12,7 @@
     <h1>Welcome, <%= user.name %></h1>
     <p>Email: <%= user.email %></p>
 
-    <!-- <div class="panel-sections">
-      <div class="section cart">
-        <h2>Your Cart</h2>
-        <% if (user.cart && user.cart.length > 0) { %>
-          <ul>
-            <% user.cart.forEach(function(item, index) { %>
-              <li>
-                <strong>Item <%= index + 1 %>:</strong><br>
-                Product ID: <%= item.productId %><br>
-                Quantity: <%= item.quantity %>
-              </li>
-            <% }) %>
-          </ul>
-        <% } else { %>
-          <p>Your cart is empty.</p>
-        <% } %>
-      </div>
-
-      <div class="section orders">
-        <h2>Your Orders</h2>
-        <% if (orders && orders.length > 0) { %>
-          <ul>
-            <% orders.forEach(function(order, index) { %>
-              <li>
-                <strong>Order <%= index + 1 %>:</strong><br>
-                Title: <%= order.title %><br>
-                Product ID: <%= order.productId %><br>
-                Address: <%= order.userAddress %><br>
-                Pincode: <%= order.userPincode %><br>
-                Ordered by: <%= order.userName %><br>
-                Payment via: <%= order.cardName %> (Exp: <%= order.expiryMonth %>/<%= order.expiryYear %>)<br>
-              </li>
-            <% }) %>
-          </ul>
-        <% } else { %>
-          <p>You have no orders yet.</p>
-        <% } %>
-      </div>
-    </div> -->
+    
 
     <div class="panel-sections">
 
